@@ -6,9 +6,7 @@ Getting Started
 ---------------
 
 - cd <directory containing this file>
-
-- $VENV/bin/pip install -e .
-
+- $VENV/bin/pip install -r requirements.txt
 - $VENV/bin/pserve development.ini
 
 How to config integration with gitlab
