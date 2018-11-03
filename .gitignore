@@ -1,0 +1,6 @@
+/ENV/
+/.idea/
+/.eggs/
+/gitlab_webhook_runner.egg-info/
+*.coveragerc
+*.log
