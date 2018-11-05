@@ -22,7 +22,7 @@ tests_require = [
     ]
 
 setup(name='gitlab-webhook-runner',
-      version='0.1',
+      version='0.2',
       description='gitlab-webhook-runner',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
