@@ -14,9 +14,9 @@ def main(global_config, **settings):
     )
 
     config.registry.scripts_manager = ScriptsManager(
-        settings['path_to_script'],
+        settings['path_to_script'].strip('"').split('" "'),
         int(settings.get('run_timeout_seconds', 15*60)),
-        settings.get('log_filename', 'gitlab_webhook.log'),
+        settings.get('runner_logger', 'runner'),
     )
 
     authn_policy = GitlabAuthenticationPolicy(settings['gitlab_token'], callback=groupfinder)
@@ -24,7 +24,11 @@ def main(global_config, **settings):
     authz_policy = ACLAuthorizationPolicy()
     config.set_authorization_policy(authz_policy)
 
+    config.include('pyramid_mako')
+
     config.add_route('home', '/')
+    config.add_route('docker_config', '/gitlab/docker_config')
+
     config.add_route('onpush', '/gitlab/onpush')
     config.add_route('onmerge', '/gitlab/onmerge')
 

@@ -9,6 +9,7 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
+    'pyramid_mako',
     'pyramid',
     'pyramid_debugtoolbar',
     'waitress',

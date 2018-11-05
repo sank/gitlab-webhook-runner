@@ -109,7 +109,7 @@ class FunctionalTests(unittest.TestCase):
         app = main(
             {},
             gitlab_token=self.gitlab_test_token,
-            path_to_script='pwd'
+            path_to_script='./test_script.sh'
         )
         from webtest import TestApp
         self.testapp = TestApp(app)
