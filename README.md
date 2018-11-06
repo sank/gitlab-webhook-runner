@@ -25,7 +25,7 @@ How to config integration with gitlab
 - Set url for push events: http://example.com/gitlab/onpush
 - Set url for merge events: http://example.com/gitlab/onmerge
 
-How to read script log execution
+How to read script execution log
 ---------------
 Script output writes to console.
 It can be configured in ini file.
@@ -51,6 +51,13 @@ sank16/gitlab-webhook-runner
 
 Goto config page to set ssh access to server
 <br/>http://your-server:port/gitlab/docker_config
+
+Set web hooks on your gitlab project (described in section above "How to config integration with gitlab")
+
+Read script execution log:
+```
+docker logs -f CONTAINER_ID
+```
 
 Webhooks gitlab doc
 ---------------
