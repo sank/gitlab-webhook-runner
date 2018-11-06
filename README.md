@@ -41,7 +41,7 @@ docker pull sank16/gitlab-webhook-runner
 
 Configure container
 ```
-docker run -p 8888:6543 -e GITLABWEBHOOK_HOSTNAME="ssh-host-name" -e GITLABWEBHOOK_USERNAME=ssh-user-name -e GITLABWEBHOOK_SCRIPTPATH="/path/to/script/on/server" -it sank16/gitlab-webhook-runner
+docker run -p 8888:6543 -e GITLABWEBHOOK_HOSTNAME="ssh-host-name" -e GITLABWEBHOOK_USERNAME=ssh-user-name -e GITLABWEBHOOK_SCRIPTPATH="/path/to/script/on/server" -e GITLABWEBHOOK_TOKEN="PUT-TOKEN-HERE" -it sank16/gitlab-webhook-runner
 ```
 Specify the host, username and password on host, where the script will run.
 

@@ -1,3 +1,5 @@
+import os
+
 from pyramid.authorization import ACLAuthorizationPolicy
 from pyramid.config import Configurator
 
@@ -19,7 +21,10 @@ def main(global_config, **settings):
         settings.get('runner_logger', 'runner'),
     )
 
-    authn_policy = GitlabAuthenticationPolicy(settings['gitlab_token'], callback=groupfinder)
+    authn_policy = GitlabAuthenticationPolicy(
+        os.environ.get('GITLABWEBHOOK_TOKEN') or settings['gitlab_token'],
+        callback=groupfinder
+    )
     config.set_authentication_policy(authn_policy)
     authz_policy = ACLAuthorizationPolicy()
     config.set_authorization_policy(authz_policy)
