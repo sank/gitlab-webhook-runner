@@ -22,7 +22,7 @@
                     <label>Username:</label>
                 </th>
                 <td>
-                    ${username}
+                    Get from environment variable GITLABWEBHOOK_USERNAME
                 </td>
             </tr>
             <tr>
