@@ -39,7 +39,7 @@ Your server must support access for ssh keys.
 docker pull sank16/gitlab-webhook-runner
 ```
 
-Configure container
+Configure and start the container
 ```
 docker run -d -p 8888:6543 \
 -e GITLABWEBHOOK_HOSTNAME="ssh-host-name" \
